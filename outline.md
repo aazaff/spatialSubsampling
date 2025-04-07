@@ -1,3 +1,5 @@
+[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--4731--6091-green?logo=orcid)](https://orcid.org/0000-0002-4731-6091)
+
 # An investigation of spatial subsampling for global biodiversity timeseries with null modelling
 
 ## Introduction
@@ -11,17 +13,12 @@ A perfect reconstruction of global, Earth-2 richness through time would be a smo
 	Eq. 1  $`\dfrac{\sigma}{\bar{x}}`$
 The greater the COV the less effective a method of calculating richness is at removing noise from spatial sampling bias.
 
-Earth-2 is populated using a spatial join of the Marine Ecoregions of the World (MEOW) and Ocean Biogeographic Information Systems (OBIS) datasets (Figure 1). This complete dataset represents the observed state of the world at 0 ma and also the true, yet incompletely observed, state of the world from 1,000 ma to 1 ma. 
+Earth-2 is populated using a spatial join of the Marine Ecoregions of the World (MEOW) and Ocean Biogeographic Information Systems (OBIS) datasets (Figure 1A). This complete dataset represents the observed state of the world at 0 ma and also the true, yet incompletely observed, state of the world from 1,000 ma to 1 ma. 
 
-A spatially heterogeneous random subsample of Earth-2 is taken 1,000 times to simulate an incompletely observed fossil record in terms of both sampling quantity and spatial coverage. Specifically, the geologic record of Earth-2 is broken into 1,000 distinct intervals, each with their own spatial pattern of sampling. First, a set of 6 marine ecoregions are randomly selected as sampling loci. A sampling locus is a region with unusually high concentrations of sampled fossil occurrences. This is meant to mimic the pattern observed in real-world data where the fossil record for a given geologic interval tends to be dominated by data collected from a few well-sampled, fossil-rich basins. For example, the Hirnantian fossil record consists of five sample-dense regions (Fig. 2) with geometrically decreasing sample coverage away from these clusters. Ten percent of occurrences within the selected ecoregions are randomly selected. Another one percent of occurrences from other ecoregions within the same province(s) as the loci ecoregions are randomly sampled. Last 0.001 percent of occurrences from all other ecoregions are sampled (Fig. 3).
+A spatially heterogeneous random subsample of Earth-2 is taken 1,000 times to simulate an incompletely observed fossil record in terms of both sampling quantity and spatial coverage. Specifically, the geologic record of Earth-2 is broken into 1,000 distinct intervals, each with their own spatial pattern of sampling. First, a set of 6 marine ecoregions are randomly selected as sampling loci. A sampling locus is a region with unusually high concentrations of sampled fossil occurrences. This is meant to mimic the pattern observed in real-world data where the fossil record for a given geologic interval tends to be dominated by data collected from a few well-sampled, fossil-rich basins. For example, the Hirnantian fossil record consists of five sample-dense regions (Fig. 1B) with geometrically decreasing sample coverage away from these clusters. Ten percent of occurrences within the selected ecoregions are randomly selected. Another one percent of occurrences from other ecoregions within the same province(s) as the loci ecoregions are randomly sampled. Last 0.001 percent of occurrences from all other ecoregions are sampled (Fig. 1C).
 
-
-Figure 1. Map of Earth-2. Each point represents a taxon occurrence record in OBIS, with the color reflecting its ecoregion. 
-
-
-Figure 2. Map of Hirnantian occurrences in the Paleobiology Database. 
-
-Figure 3. Map of 
+![Figure 1](/Analyses/Figure1.png)
+> A, OBIS organized by ecoregion. B, Hirnantian sampling in PBDB, C, Simulated spatial heterogeneity in OBIS
 
 Earth-2 Biodiversification Event.—Our second test is of how effective different methods of standardizing richness are at detecting “real” evolutionary turnover in the global biota when overprinted with a spatially irregular sampling regime. In this next experiment, a great biodiversity event (GBE), specifically defined as a ~20% increase in global generic richness, is simulated. A test is then performed to see which methods of standardizing richness most reliably detect this increase.
 
