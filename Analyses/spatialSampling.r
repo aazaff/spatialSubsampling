@@ -201,6 +201,7 @@ Radiation = branchTaxa(Ecos,0.20)
 dbSendQuery(Ecos,"DROP TABLE IF EXISTS obis.radiation CASCADE;")
 sf::st_write(Radiation,GDAL,layer="obis.radiation",layer_options=c("GEOMETRY_NAME=geom","LAUNDER=true","SPATIAL_INDEX=GIST"))
 SecondOutput = richnessMacro(1000,Dataset="obis.radiation")
+Significance = apply(FirstOutput<SecondOutput,2,sum)
 
 # Store results for future
 dbSendQuery(Ecos,"CREATE SCHEMA IF NOT EXISTS results;")
